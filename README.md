@@ -120,13 +120,14 @@ Frontend (Next.js UI)
 ## 📡 API Endpoints
 
 ### 📘 Books
+(use postman for post requests)
 
-| Method | Endpoint              | Description        |
-|--------|---------------------|--------------------|
-| GET    | /books/             | Get all books      |
-| POST   | /books/             | Add new book       |
-| GET    | /books/<id>/        | Get book details   |
-| PUT    | /books/<id>/        | Update book        |
+| Method | Endpoint                  | Description                           |
+|--------|---------------------------|---------------------------------------|
+| GET    | /books/                   | Get all books                         |
+| POST   | /books/                   | Add a new book                        |
+| GET    | /books/<id>/              | Get book details                      |
+| PUT    | /books/<id>/              | Update a book                         |
 
 ### 🤖 AI / RAG
 
@@ -240,6 +241,63 @@ What is Sapiens about?
 ```
 
 👉 If AI answers → ✅ SUCCESS
+
+## Testing APIs with Postman
+
+You can test the backend endpoints using Postman.
+
+### 1. Get All Books
+Method: GET
+
+http://127.0.0.1:8000/books/
+
+---
+
+### 2. Get Book Details
+Method: GET
+
+http://127.0.0.1:8000/books/1/
+
+(Replace 1 with a valid book ID)
+
+---
+
+### 3. Get Recommended Books
+Method: GET
+
+http://127.0.0.1:8000/books/1/recommend/
+
+---
+
+### 4. Ask a Question (RAG Query)
+Method: POST
+
+http://127.0.0.1:8000/ask-question/
+
+Body → raw → JSON
+
+{
+  "question": "What books are related to mystery?"
+}
+
+---
+
+### 5. Upload a Book
+Method: POST
+
+http://127.0.0.1:8000/upload-book/
+
+Body → raw → JSON
+
+{
+  "title": "Test Book",
+  "price": "$20",
+  "rating": "Four",
+  "link": "http://example.com/book",
+  "description": "A mystery novel about a detective.",
+  "summary": "A detective investigates a strange crime.",
+  "genre": "Mystery"
+}
 
 ---
 
