@@ -1,0 +1,10 @@
+venv/
+node_modules/
+__pycache__/
+chroma_db/
+chromedriver-win64/
+chromedriver.exe
+db.sqlite3
+.next/
+*.pyc
+.env
